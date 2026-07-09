@@ -10,7 +10,10 @@ const basePath = process.env.PAGES_BASE_PATH ?? "";
 const nextConfig = {
   output: "export",
   basePath,
-  images: { unoptimized: true },
+  // Exposed to lib/image-loader.ts, which prepends the base path to image
+  // URLs — next/image does not do that itself in a static export.
+  env: { NEXT_PUBLIC_BASE_PATH: basePath },
+  images: { loader: "custom", loaderFile: "./lib/image-loader.ts" },
   trailingSlash: true,
   reactStrictMode: true,
 };
