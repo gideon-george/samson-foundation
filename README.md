@@ -140,4 +140,14 @@ How it works:
 One-time setup (already done, listed here for reference): in the repo's
 **Settings → Pages**, "Build and deployment → Source" is set to **GitHub Actions**.
 
-> The site is served from a sub-path (`/samson-fo
+> The site is served from a sub-path (`/samson-foundation`), so the workflow sets
+> `PAGES_BASE_PATH` and `NEXT_PUBLIC_SITE_URL`. If you later add a custom domain,
+> remove those two env values in the workflow and set the domain in Settings → Pages.
+
+## Honesty & accuracy
+
+This site uses **only** information supplied by the Foundation — its real
+motto, About/Vision text, the seven program areas, the 2,000+ lives figure,
+and real contact details. Anything not yet supplied (bank details, CAC
+registration number, founding year, staff bios) is intentionally left as a
+clearly-marked TODO rather than invented. See `BRAND_NOTES.md`.

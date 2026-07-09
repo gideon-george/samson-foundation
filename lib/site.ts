@@ -29,4 +29,6 @@ export const site = {
 export const addressLine = `${site.address.street}, ${site.address.landmark}, ${site.address.state}, ${site.address.country}`;
 
 export function waLink(message?: string) {
-  const b
+  const base = `https://wa.me/${site.whatsapp.replace(/\D/g, "")}`;
+  return message ? `${base}?text=${encodeURIComponent(message)}` : base;
+}
