@@ -1,0 +1,44 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-cream text-ink font-body antialiased;
+  }
+  ::selection {
+    @apply bg-gold-200 text-ink;
+  }
+  /* Visible, consistent focus states for keyboard users */
+  a:focus-visible,
+  button:focus-visible,
+  input:focus-visible,
+  textarea:focus-visible,
+  select:focus-visible {
+    @apply outline-none ring-2 ring-gold-400 ring-offset-2 ring-offset-cream;
+  }
+}
+
+@layer components {
+  .container-content {
+    @apply mx-auto w-full max-w-content px-4 sm:px-6 lg:px-8;
+  }
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-semibold transition-colors duration-200;
+  }
+  .btn-gold {
+    @apply btn bg-gold-400 text-ink hover:bg-gold-300;
+  }
+  .btn-forest {
+    @apply btn bg-forest-600 text-white hover:bg-forest-500;
+  }
+  .btn-outline-light {
+    @apply btn border-2 border-white/80 text-white hover:bg-white/10;
+  }
+  .btn-outline-dark {
+    @apply btn border-2 border-forest-600 text-forest-700 hover:bg-forest-600 hover:text-white;
+  }
+}
