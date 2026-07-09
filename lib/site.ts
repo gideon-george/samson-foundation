@@ -7,7 +7,9 @@ export const site = {
   motto: "Move to help the less privileged.",
   description:
     "The Samson Foundation is a non-profit, humanitarian, and community development organization committed to transforming lives through compassion, empowerment, and sustainable development.",
-  url: "https://thesamsonfoundation.org", // TODO: replace with the real domain once registered
+  // Set at build time by the deploy workflow (NEXT_PUBLIC_SITE_URL); falls
+  // back to the future custom domain. Update once the real domain is live.
+  url: process.env.NEXT_PUBLIC_SITE_URL || "https://thesamsonfoundation.org",
   email: "thesamsonfoundation@gmail.com",
   phones: [
     { display: "0706 267 2205", tel: "+2347062672205" },
@@ -27,6 +29,4 @@ export const site = {
 export const addressLine = `${site.address.street}, ${site.address.landmark}, ${site.address.state}, ${site.address.country}`;
 
 export function waLink(message?: string) {
-  const base = `https://wa.me/${site.whatsapp.replace(/\D/g, "")}`;
-  return message ? `${base}?text=${encodeURIComponent(message)}` : base;
-}
+  const b

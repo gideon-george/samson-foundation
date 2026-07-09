@@ -29,3 +29,6 @@ next-env.d.ts
 
 # raw brand assets are kept outside the repo (see BRAND_NOTES.md)
 /brand-assets/
+
+# local Claude session settings (do not commit)
+.claude/settings.local.json

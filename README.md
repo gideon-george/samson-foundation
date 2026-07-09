@@ -10,7 +10,7 @@ The official website of **The Samson Foundation**, a non-profit, humanitarian, a
 - [Tailwind CSS](https://tailwindcss.com/) for styling
 - [Framer Motion](https://www.framer.com/motion/) for subtle scroll animations
 - [lucide-react](https://lucide.dev/) for icons
-- Fully static output — deploys to Vercel (or any Node host) with a plain `git push`
+- Fully static output — auto-deploys to GitHub Pages on every `git push`
 
 ## Getting started (developers)
 
@@ -126,16 +126,18 @@ so the sitemap, social-share cards, and structured data use it.
 
 ## Deploying
 
-The simplest path is [Vercel](https://vercel.com):
+This repo auto-deploys to **GitHub Pages**. The live site is:
 
-1. Push this repository to GitHub.
-2. In Vercel, "Import Project" → select the repo → deploy (no settings needed).
-3. Every future `git push` re-deploys automatically.
+**https://gideon-george.github.io/samson-foundation/**
 
-## Honesty & accuracy
+How it works:
 
-This site uses **only** information supplied by the Foundation — its real
-motto, About/Vision text, the seven program areas, the 2,000+ lives figure,
-and real contact details. Anything not yet supplied (bank details, CAC
-registration number, founding year, staff bios) is intentionally left as a
-clearly-marked TODO rather than invented. See `BRAND_NOTES.md`.
+1. The workflow at `.github/workflows/deploy.yml` runs on every push to `main`.
+2. It builds the site as static files (`output: "export"` in `next.config.mjs`)
+   and publishes them to GitHub Pages.
+3. So to update the live site, just commit and `git push` — no other steps.
+
+One-time setup (already done, listed here for reference): in the repo's
+**Settings → Pages**, "Build and deployment → Source" is set to **GitHub Actions**.
+
+> The site is served from a sub-path (`/samson-fo
